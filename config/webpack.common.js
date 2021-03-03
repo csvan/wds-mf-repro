@@ -1,6 +1,8 @@
 const paths = require("./paths");
+const path = require("path");
 const webpack = require("webpack");
-
+const ModuleFederationPlugin = require("webpack").container
+  .ModuleFederationPlugin;
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -20,6 +22,15 @@ module.exports = {
   plugins: [
     // Removes/cleans build folders and unused assets when rebuilding
     new CleanWebpackPlugin(),
+
+    new ModuleFederationPlugin({
+      name: "reproContainer",
+      filename: "reproEntryPoint.js",
+      exposes: {
+        "./app": path.join(process.cwd(), "src", "App.js"),
+      },
+      shared: {},
+    }),
 
     new webpack.ProgressPlugin({ profile: true }),
 

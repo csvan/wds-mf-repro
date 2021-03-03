@@ -1,5 +1,5 @@
 {
-  "name": "webpack-dev-server-performance-regression",
+  "name": "webpack-dev-server-mf-repro",
   "version": "1.0.0",
   "description": "National Missing and Unidentified Persons Kenya",
   "main": "index.js",
@@ -30,7 +30,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.2",
     "html-webpack-plugin": "^4.5.0",
-    "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "prettier": "^2.1.2",
     "sass-loader": "^10.0.3",
@@ -42,6 +41,8 @@
     "webpack-merge": "^5.2.0"
   },
   "dependencies": {
+    "ajv": "^6.12.6",
+    "lodash": "^4.17.21",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   }
